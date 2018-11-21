@@ -1,0 +1,51 @@
+<div class="container-fluid" style="margin-left:10%">
+  <div class="row" *ngFor="let person of flightDetails | paginate: { itemsPerPage: 4, currentPage: p, id: 'futureForecasts'}; let i = index ">
+    <div class="col-md-12" style="margin-top:1%">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <h5 class="card-header">
+              <div class="col-md-4">
+                {{person.flightName}}
+              </div>
+              <div class="col-md-4">
+                {{person.ticketPrice}} Rs/-
+              </div>              
+            </h5>
+            <div class="card-body">
+              <div class="row card-text">
+                <div class="col-md-6">
+                  Origin:
+                  <span style="color: #ff0000"> {{person.origin}}</span>
+                </div>
+                <div class="col-md-6">
+                  Destination:
+                  <span style="color: #0000ff">{{person.destination}}</span>
+                </div>
+              </div>
+              <div class="row card-text">
+                <div class="col-md-6">
+                  Departure Date: {{person.departureDate}}
+                </div>
+                <div class="col-md-6">
+                  Arrival Date: {{person.arrivalDate}}
+                </div>
+              </div>
+              <div class="row card-text">
+                <div class="col-md-6">
+                  Departure Time: {{person.departureTime}}
+                </div>
+                <div class="col-md-6">
+                  Arrival Time: {{person.arrivalTime}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="p = $event" id="futureForecasts"></pagination-controls>
+</div>
+
+

@@ -1,0 +1,83 @@
+<ng4-loading-spinner> </ng4-loading-spinner>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">
+        <h3>
+          Plan your journey
+        </h3>
+      </div>
+      <div class="row mainContainer">
+        <div class="col-md-5">
+          <!-- start date -->
+
+          <div class="daterangepicker col-sm-72">
+            <form #myForm="ngForm" novalidate>
+
+              <label>Journey</label>
+              <div class="form-group">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"  name="group1[]" value="One Way" [(ngModel)]="journeyDetails.deatils.oneway" checked> One Way
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="group1[]" value="Return" [(ngModel)]="journeyDetails.deatils.return"> Return
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-sm-72">
+                <label>
+                  <span>Origin</span>
+                  <input style="margin-left:36px" type="text" name="name" placeholder="Enter Origin" required>
+                </label>
+              </div>
+
+              <div class="col-sm-72">
+                <label>
+                  <span>Destination</span>
+                  <input type="text" name="name" placeholder="Enter Destination" required>
+                </label>
+              </div>
+
+              <div class="col-sm-72">
+                <my-date-picker name="mydate" placeholder="Departure Date" [options]="myDatePickerOptions" [(ngModel)]="journeyDetails.deatils.departureDate"></my-date-picker>
+              </div>
+
+              <div class="col-sm-72" *ngIf="journeyDetails.deatils.return">
+                <my-date-picker name="mydate" placeholder="Return Date" [options]="myDatePickerOptions" [(ngModel)]="journeyDetails.deatils.returnDate"></my-date-picker>
+              </div>
+
+              <button type="button" class="btn btn-primary" (click)="searchFlights(journeyDetails)">Search</button>
+            </form>
+          </div>
+          <div id="range-selector-demo col-sm-72">
+            <dx-range-selector id="range-selector" [dataSource]="flights" dataSourceField="ticketPrice" (onValueChanged)="onValueChanged($event)">
+              <dxo-margin [top]="20"></dxo-margin>
+              <dxo-size [height]="140"></dxo-size>
+              <dxo-scale [tickInterval]="1000" [minorTickInterval]="100">
+                <dxo-label format="decimal"></dxo-label>
+              </dxo-scale>
+              <dxo-behavior callValueChanged="onMoving"></dxo-behavior>
+            </dx-range-selector>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <app-flight-details [flightDetails]="selectedFlights"></app-flight-details>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+  $("#myForm input:checkbox").change(function () {
+    $("#myForm input:checkbox").prop("checked", false);
+    $(this).attr("checked", true);
+  });
+</script>

@@ -1,0 +1,112 @@
+[
+  {
+    "flightName": "Air India",
+    "flightCode": "AI-839",
+    "origin": "Delhi",
+    "destination": "Luckonw",
+    "departureTime": "9:00 am",
+    "arrivalTime": "10:00 am",
+    "departureDate": "25/11/2018",
+    "arrivalDate": "25/11/2018",
+    "ticketPrice": 6500
+  },
+  {
+    "flightName": "Jet Airways",
+    "flightCode": "9W-985",
+    "origin": "Luckonw",
+    "destination": "Delhi",
+    "departureTime": "11:00 am",
+    "arrivalTime": "12:00 pm",
+    "departureDate": "25/11/2018",
+    "arrivalDate": "25/11/2018",
+    "ticketPrice": 8500
+  },
+  {
+    "flightName": "Jet Airways",
+    "flightCode": "9W-985",
+    "origin": "Delhi",
+    "destination": "Luckonw",
+    "departureTime": "7:00 pm",
+    "arrivalTime": "8:10 pm",
+    "departureDate": "27/11/2018",
+    "arrivalDate": "27/11/2018",
+    "ticketPrice": 2500
+  },
+  {
+    "flightName": "Go Air",
+    "flightCode": "G8-640/525",
+    "origin": "Delhi",
+    "destination": "Luckonw",
+    "departureTime": "6:00 am",
+    "arrivalTime": "6:50 am",
+    "departureDate": "28/11/2018",
+    "arrivalDate": "28/11/2018",
+    "ticketPrice": 1289
+  },
+  {
+    "flightName": "Go Air",
+    "flightCode": "AI-839",
+    "origin": "Delhi",
+    "destination": "Jaipur",
+    "departureTime": "9:00 am",
+    "arrivalTime": "10:00 am",
+    "departureDate": "25/11/2018",
+    "arrivalDate": "25/11/2018",
+    "ticketPrice": 6500
+  },
+  {
+    "flightName": "Air India",
+    "flightCode": "AI-839",
+    "origin": "Delhi",
+    "destination": "Luckonw",
+    "departureTime": "9:00 am",
+    "arrivalTime": "10:00 am",
+    "departureDate": "25/11/2018",
+    "arrivalDate": "25/11/2018",
+    "ticketPrice": 6500
+  },
+  {
+    "flightName": "Air India",
+    "flightCode": "AI-839",
+    "origin": "Delhi",
+    "destination": "Luckonw",
+    "departureTime": "9:00 am",
+    "arrivalTime": "10:00 am",
+    "departureDate": "25/11/2018",
+    "arrivalDate": "25/11/2018",
+    "ticketPrice": 6500
+  },
+  {
+    "flightName": "Air India",
+    "flightCode": "AI-839",
+    "origin": "Delhi",
+    "destination": "Luckonw",
+    "departureTime": "9:00 am",
+    "arrivalTime": "10:00 am",
+    "departureDate": "25/11/2018",
+    "arrivalDate": "25/11/2018",
+    "ticketPrice": 6500
+  },
+  {
+    "flightName": "Air India",
+    "flightCode": "AI-839",
+    "origin": "Delhi",
+    "destination": "Luckonw",
+    "departureTime": "9:00 am",
+    "arrivalTime": "10:00 am",
+    "departureDate": "25/11/2018",
+    "arrivalDate": "25/11/2018",
+    "ticketPrice": 6500
+  },
+  {
+    "flightName": "Air India",
+    "flightCode": "AI-839",
+    "origin": "Delhi",
+    "destination": "Luckonw",
+    "departureTime": "9:00 am",
+    "arrivalTime": "10:00 am",
+    "departureDate": "25/11/2018",
+    "arrivalDate": "25/11/2018",
+    "ticketPrice": 6500
+  }
+]

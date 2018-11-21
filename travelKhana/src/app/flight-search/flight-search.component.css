@@ -1,0 +1,61 @@
+.daterangepicker {
+  position: relative;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 4px;
+  width: 278px;
+  padding: 4px;
+  margin-top: 1px;
+  
+  left: 20px;
+}
+
+.mainContainer{
+ top: 100px;
+}
+
+/*
+.container{
+    direction: rtl;
+}
+.navtop{
+    margin-top:50px;
+}
+.tab-content {
+    padding: 40px;
+    margin-top: -20px; 
+}*/
+
+::ng-deep #range-selector-demo {
+    height: 540px;
+    width: 100%;
+}
+
+::ng-deep #range-selector-demo h2 {
+    font-size: 20px;
+    margin: 38px 0 10px;
+    text-align: center;
+}
+
+::ng-deep #range-selector-demo table {
+    width: 100%;
+    border: 1px solid #c2c2c2;
+    border-collapse: collapse;
+    border-spacing: 0;     
+}
+
+::ng-deep #range-selector-demo td {
+    width: 20%;
+    padding: 4px;
+    border-top: 1px solid #c2c2c2;
+    border-bottom: 1px solid #c2c2c2;
+}
+
+::ng-deep #range-selector-demo td > b {
+    font-weight: 500;
+}
+
+
+
+
+
