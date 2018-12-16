@@ -10,51 +10,57 @@
       <div class="row mainContainer">
         <div class="col-md-5">
           <!-- start date -->
-
           <div class="daterangepicker col-sm-72">
             <form #myForm="ngForm" novalidate>
-
-              <label>Journey</label>
-              <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"  name="group1[]" value="One Way" [(ngModel)]="journeyDetails.deatils.oneway" checked> One Way
-                  </label>
+              <div class="col-sm-72">
+                <ul class="nav nav-pills nav-fill">
+                  <li [class.active]="viewMode=='oneWay'" class="nav-item"><a [class.active]="viewMode=='oneWay'" class="nav-link"
+                      (click)="viewMode='oneWay'">One Way</a></li>
+                  <li [class.active]="viewMode=='return'" class="nav-item"><a [class.active]="viewMode=='return'" class="nav-link"
+                      (click)="viewMode='return'">Two Way</a></li>
+                </ul>
+              </div>
+              <div [ngSwitch]="viewMode" class="col-sm-72">
+                <div *ngSwitchCase="'oneWay'" style="margin-top: 18px;width: 17rem;padding: .5rem .5rem .5rem 0rem;">
+                  <div class="col-sm-72">
+                    <my-date-picker name="mydate" placeholder="Departure Date" [options]="myDatePickerOptions"
+                      [(ngModel)]="journeyDetails.deatils.departureDate"></my-date-picker>
+                  </div>
                 </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="group1[]" value="Return" [(ngModel)]="journeyDetails.deatils.return"> Return
-                  </label>
+                <div *ngSwitchCase="'return'" style="margin-top: 18px;width: 17rem;padding: .5rem .5rem .5rem 0rem;">
+                  <div class="col-sm-72">
+                    <my-date-picker name="mydate" placeholder="Departure Date" [options]="myDatePickerOptions"
+                      [(ngModel)]="journeyDetails.deatils.departureDate"></my-date-picker>
+                  </div>
+                  <div class="col-sm-72">
+                    <my-date-picker name="mydate" placeholder="Return Date" [options]="myDatePickerOptions" [(ngModel)]="journeyDetails.deatils.returnDate"></my-date-picker>
+                  </div>
                 </div>
               </div>
-
               <div class="col-sm-72">
                 <label>
                   <span>Origin</span>
-                  <input style="margin-left:36px" type="text" name="name" placeholder="Enter Origin" required>
+                  <input style="margin-left:36px;width:11.2rem;" type="text" name="name" placeholder="Enter Origin"
+                    required>
                 </label>
               </div>
 
               <div class="col-sm-72">
                 <label>
                   <span>Destination</span>
-                  <input type="text" name="name" placeholder="Enter Destination" required>
+                  <input style="width:11.2rem" type="text" name="name" placeholder="Enter Destination" required>
                 </label>
               </div>
-
               <div class="col-sm-72">
-                <my-date-picker name="mydate" placeholder="Departure Date" [options]="myDatePickerOptions" [(ngModel)]="journeyDetails.deatils.departureDate"></my-date-picker>
+                <button style="float: right;position: relative;" type="button" class="btn btn-primary" (click)="searchFlights(journeyDetails)">Search</button>
               </div>
-
-              <div class="col-sm-72" *ngIf="journeyDetails.deatils.return">
-                <my-date-picker name="mydate" placeholder="Return Date" [options]="myDatePickerOptions" [(ngModel)]="journeyDetails.deatils.returnDate"></my-date-picker>
-              </div>
-
-              <button type="button" class="btn btn-primary" (click)="searchFlights(journeyDetails)">Search</button>
             </form>
           </div>
-          <div id="range-selector-demo col-sm-72">
-            <dx-range-selector id="range-selector" [dataSource]="flights" dataSourceField="ticketPrice" (onValueChanged)="onValueChanged($event)">
+
+
+          <div id="range-selector-demo col-sm-72" [hidden]="selectedFlights.length==0">
+            <dx-range-selector id="range-selector" [dataSource]="flights" dataSourceField="ticketPrice"
+              (onValueChanged)="onValueChanged($event)">
               <dxo-margin [top]="20"></dxo-margin>
               <dxo-size [height]="140"></dxo-size>
               <dxo-scale [tickInterval]="1000" [minorTickInterval]="100">

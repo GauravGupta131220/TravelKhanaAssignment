@@ -15,6 +15,7 @@ export class FlightSearchComponent implements OnInit {
 
     ngOnInit() { }
 
+    viewMode='oneWay';
 
     public myDatePickerOptions: IMyDpOptions = {
         // other options...
